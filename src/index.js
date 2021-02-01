@@ -20,9 +20,6 @@ function Booklist() {
   return (
     <section className="bookList">
       <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
@@ -31,23 +28,20 @@ const Book = () => {
   return (
     <article className="book">
       {" "}
-      <Image></Image>
-      <Title />
-      <Author />
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/81zv%2BgeN0GL._AC_UL200_SR200,200_.jpg"
+        alt="book cover"
+      />
+      <h1>The Devil You Know: A Black Power Manifesto</h1>
+      <h4
+        style={{ color: "#617d18", fontSize: "0.75rem", marginTop: "0.25rem" }}
+      >
+        Charles M Blow
+      </h4>
     </article>
   );
 };
 
-const Image = () => (
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/I/81zv%2BgeN0GL._AC_UL200_SR200,200_.jpg"
-    alt="book cover"
-  />
-);
-
-const Author = () => <h4>Charles M Blow</h4>;
-
-const Title = () => <h1>The Devil You Know: A Black Power Manifesto</h1>;
 ReactDom.render(<Booklist />, document.getElementById("root"));
 
 // </article>here we inject the JSX above by saying what we are rendering and where
