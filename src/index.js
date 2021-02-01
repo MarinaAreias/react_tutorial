@@ -16,27 +16,48 @@ import "./index.css";
 // close every element
 // formatting
 
+const firstBook = {
+  img:
+    "https://images-na.ssl-images-amazon.com/images/I/81zv%2BgeN0GL._AC_UL200_SR200,200_.jpg",
+  title: "The Devil You Know: A Black Power Manifesto",
+  author: " Charles M Blow",
+};
+const secondBook = {
+  img:
+    "https://images-na.ssl-images-amazon.com/images/I/918sHoEOD8L._AC_UL200_SR200,200_.jpg",
+  title: "Llama Llama I Love You",
+  author: "Anna Dewdney",
+};
 function Booklist() {
   return (
     <section className="bookList">
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
+  const { img, title, author } = props;
+
   return (
     <article className="book">
       {" "}
-      <img
-        src="https://images-na.ssl-images-amazon.com/images/I/81zv%2BgeN0GL._AC_UL200_SR200,200_.jpg"
-        alt="book cover"
-      />
-      <h1>The Devil You Know: A Black Power Manifesto</h1>
+      <img src={img} alt="book cover" />
+      <h1> {title}</h1>
       <h4
         style={{ color: "#617d18", fontSize: "0.75rem", marginTop: "0.25rem" }}
       >
-        Charles M Blow
+        {author}
       </h4>
     </article>
   );
